@@ -1,0 +1,13 @@
+# Tools
+openai
+mypy
+black[jupyter]
+jupyterlab
+notebook
+
+# Libraries
+torch
+torchvision
+pandas
+matplotlib
+ipywidgets

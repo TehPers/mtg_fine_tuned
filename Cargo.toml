@@ -1,0 +1,48 @@
+[package]
+name = "mtg_fine_tuned"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rand = "0.8"
+rayon = "1"
+bitflags = "1"
+itertools = "0.10"
+reqwest = { version = "0.11", features = ["brotli", "gzip", "deflate", "json"] }
+tokio = { version = "1", features = ["full"] }
+tower = { version = "0.4", features = ["util", "limit"] }
+image = "0.24"
+ndarray = "0.15"
+linfa = "0.6"
+linfa-linear = "0.6"
+linfa-datasets = { version = "0.6", features = [
+    "diabetes",
+    "generate",
+    "iris",
+    "linnerud",
+    "winequality",
+] }
+
+[[bin]]
+name = "filter_oracle_cards"
+path = "src/filter_oracle_cards.rs"
+
+[[bin]]
+name = "gen_training_data"
+path = "src/gen_training_data.rs"
+
+[[bin]]
+name = "download_art"
+path = "src/download_art.rs"
+
+[[bin]]
+name = "resize_art"
+path = "src/resize_art.rs"
+
+[[bin]]
+name = "generate_image"
+path = "src/generate_image.rs"
